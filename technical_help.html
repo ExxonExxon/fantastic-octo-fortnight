@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Help Forum</title>
+    <!-- Add your CSS stylesheets or links here -->
+</head>
+<body>
+    <h1>Technical Help</h1>
+    <div class="forum-list">
+        {% for forum in forums_data %}
+            <div class="forum">
+                <h2>{{ forum.title }}</h2>
+                <p>{{ forum.description }}</p>
+                <a href="/view_forum/{{ forum.id }}">Go to forum</a>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- Add your additional HTML content here -->
+</body>
+</html>

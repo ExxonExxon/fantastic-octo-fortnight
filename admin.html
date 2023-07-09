@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Controls</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="submit"],
+        input[type="checkbox"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            background-color: #f2f2f2;
+            color: #333;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Controls</h1>
+        <form action="/admin_controls" method="GET">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+
+            <input type="submit" value="BAN">
+
+            <label for="secure">Remove All Users:</label>
+            <input type="text" id="secure" name="secure" value="dont look here">
+
+            <input type="submit" value="Delete All Users">
+        </form>
+
+        <p class="message">{{ allowed }}</p>
+        <p class="message">Back to <a class="message" href="/">HOME</a> page.</p>
+        <p>{{ row }}</p>
+    </div>
+</body>
+</html>

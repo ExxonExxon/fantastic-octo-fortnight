@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Forum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Login</a>
+    </div>
+
+    <div class="container">
+        <h1>View Forum</h1>
+        <div class="forum-details">
+            <h2>{{ forum.title }}</h2>
+            <p>{{ forum.description }}</p>
+            <p>Views: {{ forum.views }} | Likes: {{ forum.likes }} | Comments: {{ forum.comments }}</p>
+        </div>
+
+        <div class="comments-section">
+            <h3>Comments</h3>
+            {% for comment in comments %}
+            <div class="comment">
+                <p>{{ comment.username }}</p>
+                <p>{{ comment.comment_text }}</p>
+                <p>Likes: {{ comment.likes }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <form action="{{ url_for('add_comment', forum_id=forum.id) }}" method="POST">
+            <label for="comment">Add a Comment:</label>
+            <textarea id="comment" name="comment" required></textarea>
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
