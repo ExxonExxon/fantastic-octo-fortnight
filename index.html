@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Retro Forum Gaming Website</title>
   <style>
     body {
-      background-color: #1F2A38;
-      color: #fff;
       font-family: 'Press Start 2P', cursive;
       margin: 0;
       padding: 0;
@@ -242,6 +241,18 @@
     }
   </style>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script>
+    // Retrieve the theme colors from Flask variables
+    var background_color = "{{ background_color }}";
+    var btn_color = "{{ btn_color }}";
+    var container_color = "{{ container_color }}";
+    var nav_color = "{{ nav_color }}";
+    var txt_color = "{{ txt_color }}";
+
+    // Set the CSS styling dynamically using JavaScript
+    document.body.style.backgroundColor = background_color;
+    // Modify other elements' styles accordingly
+</script>
 </head>
 
 <body>
@@ -296,6 +307,8 @@
     </ul>
     <div></div>
   </div>
+
+  
 </body>
 
 </html>
